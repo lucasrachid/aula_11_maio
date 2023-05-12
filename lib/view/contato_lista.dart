@@ -53,9 +53,9 @@ class ContatoLista extends StatelessWidget {
           IconButton(
             onPressed: () {
               print(contatoDTO.id);
-              contatoDAOInterface.save(contatoDTO);
+              contatoDAOInterface.update(contatoDTO);
             },
-            icon: Icon(Icons.save),
+            icon: Icon(Icons.edit),
           ),
           IconButton(
             onPressed: () {
