@@ -27,7 +27,8 @@ class ContatoLista extends StatelessWidget {
       return ListView.builder(
         itemCount: listaContato.length,
         itemBuilder: (context, indice) {
-          return Text('??????');
+          var contato = listaContato[indice];
+          return Text(contato.toString());
         },        
       );
     },
