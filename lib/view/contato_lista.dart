@@ -1,14 +1,13 @@
+import 'package:aula_onze_maio/database/fake/contato_dao.dart';
+import 'package:aula_onze_maio/view/dto/contato_dto.dart';
 import 'package:aula_onze_maio/view/interface/contato_dao_interface.dart';
 import 'package:flutter/material.dart';
 import 'package:aula_onze_maio/rota.dart';
 
 class ContatoLista extends StatelessWidget {
 
-  late ContatoDAOInterface contatoDaoInterface;
-
   @override
   Widget build(BuildContext context) {
-    contatoDaoInterface.findAll();
     return Scaffold(
       appBar: AppBar(title: const Text('Lista Contatos')),
       body: criarLista(),
@@ -19,7 +18,20 @@ class ContatoLista extends StatelessWidget {
   }
 
   Widget criarLista() {
-    return Container();
+    ContatoDAOInterface contatoDAOInterface = ContatoDAO();
+    return FutureBuilder(future: contatoDAOInterface.findAll(), 
+    builder: (BuildContext context, AsyncSnapshot<List<ContatoDTO>> lista) {
+      if (!lista.hasData) return CircularProgressIndicator();
+      if (lista.data == null) return Container();
+      List<ContatoDTO> listaContato = lista.data!;
+      return ListView.builder(
+        itemCount: listaContato.length,
+        itemBuilder: (context, indice) {
+          return Text('??????');
+        },        
+      );
+    },
+    );
   }
 
   BottomAppBar criarBarraNavegacao(){
