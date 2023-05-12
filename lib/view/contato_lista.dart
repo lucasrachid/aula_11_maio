@@ -28,10 +28,44 @@ class ContatoLista extends StatelessWidget {
         itemCount: listaContato.length,
         itemBuilder: (context, indice) {
           var contato = listaContato[indice];
-          return Text(contato.toString());
+          return criarItemLista(contato);
         },        
       );
     },
+    );
+  }
+
+  Widget criarItemLista(ContatoDTO contatoDTO) {
+    ContatoDAOInterface contatoDAOInterface = ContatoDAO();
+    return ListTile(
+      title: Text('CONTATO'),
+      subtitle: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Nome: ${contatoDTO.nome}'),
+          Text('Telefone: ${contatoDTO.telefone}'),
+          Text('Email: ${contatoDTO.email}'),
+        ],
+      ),
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          IconButton(
+            onPressed: () {
+              print(contatoDTO.id);
+              contatoDAOInterface.save(contatoDTO.id);
+            },
+            icon: Icon(Icons.save),
+          ),
+          IconButton(
+            onPressed: () {
+              print(contatoDTO.id);
+              contatoDAOInterface.deleteById(contatoDTO.id);
+            },
+            icon: Icon(Icons.delete),
+          ),
+        ],
+      ),
     );
   }
 
