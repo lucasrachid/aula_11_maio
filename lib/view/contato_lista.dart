@@ -28,14 +28,14 @@ class ContatoLista extends StatelessWidget {
         itemCount: listaContato.length,
         itemBuilder: (context, indice) {
           var contato = listaContato[indice];
-          return criarItemLista(contato);
+          return criarItemLista(context, contato);
         },        
       );
     },
     );
   }
 
-  Widget criarItemLista(ContatoDTO contatoDTO) {
+  Widget criarItemLista(BuildContext context, ContatoDTO contatoDTO) {
     ContatoDAOInterface contatoDAOInterface = ContatoDAO();
     return ListTile(
       title: Text('CONTATO'),
@@ -53,7 +53,8 @@ class ContatoLista extends StatelessWidget {
           IconButton(
             onPressed: () {
               print(contatoDTO.id);
-              contatoDAOInterface.update(contatoDTO);
+              Navigator.pushNamed(context, Rota.contatoForm, arguments: contatoDTO);
+              // contatoDAOInterface.update(contatoDTO);
             },
             icon: Icon(Icons.edit),
           ),

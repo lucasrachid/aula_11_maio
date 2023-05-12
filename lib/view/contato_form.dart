@@ -1,3 +1,4 @@
+import 'package:aula_onze_maio/view/dto/contato_dto.dart';
 import 'package:flutter/material.dart';
 import 'package:aula_onze_maio/view/widget/campo_email.dart';
 import 'package:aula_onze_maio/view/widget/campo_nome.dart';
@@ -9,6 +10,8 @@ class ContatoForm extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
+    final args = ModalRoute.of(context)!.settings.arguments as ContatoDTO;
+    
     return Scaffold(
       appBar: AppBar(title: const Text('Cadastro')),
       body: Form(
