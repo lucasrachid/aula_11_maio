@@ -36,6 +36,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   mask_text_input_formatter: ^2.4.0
+  supabase_flutter: ^1.10.1
+  mysql1: 00.20.0
 
 dev_dependencies:
   flutter_test:
@@ -89,3 +91,11 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  # A8IeCEar7XpuOntY - SENHA SUPABASE
+  # fbDRs98OTOyydwhx+64SXLz0Ujp+QbRrMxwL2Hrbf2Oqnw9kxMO/vnmAtpFnn8MhUg2JlDxJEsivtJ7Xo9GB7g== JWT Secret
+  # https://bolegsosusjeptueocek.supabase.co - URL
+
+
+  # Service Role Secret - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJvbGVnc29zdXNqZXB0dWVvY2VrIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4NTY2NjA0NCwiZXhwIjoyMDAxMjQyMDQ0fQ.agTZx_ANoB6WdIKfUhsDbZs4dOdQH8pYeIY3GiQPBqs
+ # Key API Public - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJvbGVnc29zdXNqZXB0dWVvY2VrIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODU2NjYwNDQsImV4cCI6MjAwMTI0MjA0NH0.9i_ocwi4N3Tfe6D8UB4Vm8IS3g93lemsY3JN56PRDJs
